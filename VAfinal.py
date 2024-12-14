@@ -31,7 +31,7 @@ from langchain.chains import create_retrieval_chain
 import streamlit as st
 
 # Replace with your API key
-aai.settings.api_key = "a9b12d1d2c824de6ae14003f556363c9"
+aai.settings.api_key = "ASSEMBYAI_API_KEY"
 
 transcriber = aai.Transcriber()
 transcript = transcriber.transcribe("videoplayback.mp4")
@@ -74,7 +74,7 @@ retriever=vectorstore.as_retriever(search_type="similarity",search_kwargs={"k":3
 
 
 #calling the api fromopensource model hugging face 
-os.environ['HUGGINGFACEHUB_API_TOKEN']="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"
+os.environ['HUGGINGFACEHUB_API_TOKEN']="HUGGINGFACE_API_KEY"
 
 #using mistralai to answer the query based on the given prompt 
 hf=HuggingFaceHub(
@@ -94,7 +94,7 @@ llm = ChatGroq(
     max_tokens=1000,
     timeout=None,
     max_retries=2,
-    api_key="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"
+    api_key="CHATGROQ_API_KEY"
 )
 
 prompt2= PromptTemplate.from_template("""
